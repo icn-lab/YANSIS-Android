@@ -1,0 +1,5 @@
+include ':sen'
+include ':jPLevelAnalyzer'
+include ':eJAdvisor3'
+include ':resourceManager'
+include ':eJAdvisor3App'

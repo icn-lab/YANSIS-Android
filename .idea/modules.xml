@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EJAdvisor3App.iml" filepath="$PROJECT_DIR$/EJAdvisor3App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eJAdvisor3/eJAdvisor3.iml" filepath="$PROJECT_DIR$/eJAdvisor3/eJAdvisor3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eJAdvisor3App/eJAdvisor3App.iml" filepath="$PROJECT_DIR$/eJAdvisor3App/eJAdvisor3App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jPLevelAnalyzer/jPLevelAnalyzer.iml" filepath="$PROJECT_DIR$/jPLevelAnalyzer/jPLevelAnalyzer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resourceManager/resourceManager.iml" filepath="$PROJECT_DIR$/resourceManager/resourceManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sen/sen.iml" filepath="$PROJECT_DIR$/sen/sen.iml" />
+    </modules>
+  </component>
+</project>
+

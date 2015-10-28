@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\exploded-aar\EJAdvisor3App\resourceManager\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6df8a90dedc03c1fb0cf3b9e197de247c2caa7a8">
+        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\classes-d14c341a7cb9a962d8d5a5b650b26ca428195177.jar" />
+    </item>
+    <item
+        jar="C:\Users\nagano\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\support-v4-19.1.0-65c17b78082ae3fad2ece90f00be0b652b6b502e.jar" />
+    </item>
+    <item
+        jar="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\exploded-aar\EJAdvisor3App\jPLevelAnalyzer\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ada8c32ac43e523ae37d3c7056610941f6020ea6">
+        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\classes-8dc0f59affa2c99029a4fff396771a5a781e02e4.jar" />
+    </item>
+    <item
+        jar="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\exploded-aar\EJAdvisor3App\eJAdvisor3\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c65a1f1e78fbec3d11b8f84c2de236e910a17cb0">
+        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\classes-ba3a9fb7b9a10d54163325784bc324559fad687c.jar" />
+    </item>
+    <item
+        jar="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\exploded-aar\EJAdvisor3App\sen\unspecified\libs\junit.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="99129f16442844f6a4a11ae22fbbee40b14d774f">
+        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\junit-ed86d139b1a33ed983ef7a5c27e8630ba41e1554.jar" />
+    </item>
+    <item
+        jar="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\exploded-aar\EJAdvisor3App\sen\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="cb7088f4a10ec0e9477aac3a3ed3cdf5ce4bb9e6">
+        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\classes-333a496707bae09f1135b5fd1bf77f14635beeb0.jar" />
+    </item>
+    <item
+        jar="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\exploded-aar\EJAdvisor3App\sen\unspecified\libs\commons-logging.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f029a2aefe2b3e1517573c580f948caac31b1056">
+        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\commons-logging-78e1e72d00cfbba66edc8a315099ce778c0db22e.jar" />
+    </item>
+
+</items>

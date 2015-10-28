@@ -1,0 +1,95 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From EJAdvisor3:
+* proguard-project.txt
+From EJAdvisor3App:
+* ic_launcher-web.png
+* proguard-project.txt
+From JPLevelAnalyzer:
+* .DS_Store
+* ._.DS_Store
+* proguard-project.txt
+From ResourceManager:
+* proguard-project.txt
+From Sen:
+* .DS_Store
+* ._.DS_Store
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In Sen:
+* AndroidManifest.xml => sen\src\main\AndroidManifest.xml
+* assets\ => sen\src\main\assets\
+* libs\commons-logging.jar => sen\libs\commons-logging.jar
+* libs\junit.jar => sen\libs\junit.jar
+* res\ => sen\src\main\res\
+* src\ => sen\src\main\java\
+In JPLevelAnalyzer:
+* AndroidManifest.xml => jPLevelAnalyzer\src\main\AndroidManifest.xml
+* assets\ => jPLevelAnalyzer\src\main\assets\
+* res\ => jPLevelAnalyzer\src\main\res\
+* src\ => jPLevelAnalyzer\src\main\java\
+In EJAdvisor3:
+* AndroidManifest.xml => eJAdvisor3\src\main\AndroidManifest.xml
+* assets\ => eJAdvisor3\src\main\assets\
+* res\ => eJAdvisor3\src\main\res\
+* src\ => eJAdvisor3\src\main\java\
+In ResourceManager:
+* AndroidManifest.xml => resourceManager\src\main\AndroidManifest.xml
+* assets\ => resourceManager\src\main\assets\
+* lint.xml => resourceManager\lint.xml
+* res\ => resourceManager\src\main\res\
+* src\ => resourceManager\src\main\java\
+In EJAdvisor3App:
+* AndroidManifest.xml => eJAdvisor3App\src\main\AndroidManifest.xml
+* assets\ => eJAdvisor3App\src\main\assets\
+* lint.xml => eJAdvisor3App\lint.xml
+* res\ => eJAdvisor3App\src\main\res\
+* src\ => eJAdvisor3App\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
