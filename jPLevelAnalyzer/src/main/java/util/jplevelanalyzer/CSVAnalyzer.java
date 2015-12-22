@@ -39,7 +39,7 @@ public class CSVAnalyzer {
      * @param removeTrailingEmptyFields 
      * if true, empty elements at the last of the array will be removed.
      * @return array of the split strings
-     * @throws csvanalyzer.CSVAnalyzer.ContinuationException
+     * @throws ContinuationException
      */
     public String[] split(String line, boolean removeTrailingEmptyFields) 
         throws ContinuationException {
