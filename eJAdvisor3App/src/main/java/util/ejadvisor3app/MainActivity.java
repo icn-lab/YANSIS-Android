@@ -7,14 +7,21 @@ import util.ejadvisor3.WordProperty;
 import util.resourcemanager.ResourceManager;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.text.Editable;
 import android.text.Html;
+import android.text.TextWatcher;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,15 +32,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import org.hanasu.Hanasu;
+
+public class MainActivity extends FragmentActivity {
 	private EJAdvisor3 ejadv3;
 	private String author="Akinori Ito";
-	private String version="20150410";
+	private String version="20170106";
 	private String senVersion="";
 	private String morphVersion="";
+	private String htsvoiceVersion="";
 	private String colorEasy      = "#000000";
 	private String colorDifficult = "#ff00ff";
 	private String colorOutOfList = "#ff0000";
@@ -44,11 +55,31 @@ public class MainActivity extends Activity {
 	private final int baseHeightPixels = 728;
 	private float fontSize;
 	private float scale;
-	
+	private final int MIN_SPEECH_RATE = 300;
+	private final int MAX_SPEECH_RATE = 600;
+	private final int DEFAULT_SPEECH_RATE = 360;
+	private int speechRate = DEFAULT_SPEECH_RATE;
+	private Boolean analysisDone = false;
+	private final String htsVoice = "/htsvoice/tohoku-f01-neutral.htsvoice";
+	private Hanasu hanasu;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		// イベントリスナの設定
+		EditText et = (EditText)findViewById(R.id.editTextInputSentence);
+		et.addTextChangedListener(new TextWatcher(){
+			public void onTextChanged(CharSequence s, int start, int before, int count){
+				setAnalysisDone(false);
+			}
+			public void beforeTextChanged(CharSequence s, int start, int count ,int after){
+			}
+			public void afterTextChanged(Editable s){
+			}
+		});
+		setAnalysisDone(false);
 	    /*
 		calcFontSize();
 		setFontSize();
@@ -88,7 +119,8 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 0, 0, "About").setIcon(android.R.drawable.ic_menu_info_details);
+		menu.add(0, 0, 0, "話速").setIcon(android.R.drawable.ic_menu_preferences);
+		menu.add(0, 1, 1, "About").setIcon(android.R.drawable.ic_menu_info_details);
 		// Inflate the menu; this adds items to the action bar if it is present.
 		//getMenuInflater().inflate(R.menu.main, menu);
 		return true;
@@ -100,9 +132,12 @@ public class MainActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch(item.getItemId()){
-		case 0:
-			aboutDialog();
-			return true;
+			case 0:
+				speechRateSettings();
+				return true;
+			case 1:
+				aboutDialog();
+				return true;
 		}
 		return false;
 		/*
@@ -116,8 +151,10 @@ public class MainActivity extends Activity {
 	
 	// アプリケーションの初期設定
     protected void init(){
+		String baseDir = getFilesDir().toString();
     	prepareResources();
-    	ejadv3 = new EJAdvisor3(getFilesDir().toString());
+    	ejadv3 = new EJAdvisor3(baseDir);
+		hanasu = new Hanasu(baseDir+htsVoice);
     }
     
     private void calcFontSize(){
@@ -160,16 +197,35 @@ public class MainActivity extends Activity {
     protected void prepareResources(){
     	morphVersion = checkResources("morph.zip", "morph/version.txt");
         senVersion   = checkResources("sen.zip", "sen/version.txt");
+		htsvoiceVersion = checkResources("htsvoice.zip", "htsvoice/version.txt");
     }
     
     // 分析ボタンを押したときの動作
-    public void btnEval_onClick(View view){
+    protected void btnEval_onClick(View view){
     	EditText edittext = (EditText)findViewById(R.id.editTextInputSentence);
     	
     	WordProperty[][] analysisResult = ejadv3.doAnalysis(edittext.getText().toString());
+		setAnalysisDone(true);
+
     	showAnalysisResult(analysisResult);
     }
-    
+
+	protected void setAnalysisDone(Boolean b){
+		analysisDone = b;
+		set_btnSynthesisState();
+	}
+
+	protected void set_btnSynthesisState(){
+		Button bt = (Button)findViewById(R.id.btnSynthesis);
+		bt.setEnabled(analysisDone);
+	}
+
+	//合成ボタンを押したときの動作
+	protected void btnSyntheis_onClick(View view){
+		hanasu.setTokens(ejadv3.getTokens());
+		hanasu.doSynthesize(speechRate);
+	}
+
     // 分析結果を表示する（文ごと）
     protected void showAnalysisResult(final WordProperty[][] analysisResult){	
     	ArrayList<CharSequence> htmlSentence = new ArrayList<CharSequence>();
@@ -250,11 +306,11 @@ public class MainActivity extends Activity {
         for(int i=1;i < bunsetsu.length;i++){
             bStr += "&nbsp;&nbsp;"+bunsetsu[i];
         }
-        bStr += "<br/>";
+        //bStr += "<br/>";
         evaluationPoints += bStr;
         double score = ejadv3.estimateScore(w);
         String scoreString = String.format("%.2f", score);
-        evaluationPoints += "score:"+scoreString+"<br/>";
+        evaluationPoints += "(score:"+scoreString+")<br/>";
 
         for (int i = 0; i < w.length; i++) {
             // 単語が簡単かどうかのアドバイス
@@ -365,7 +421,27 @@ public class MainActivity extends Activity {
     	
     	return color;
     }
-    
+
+	protected int speechRateToSeekBarProgress(int sr){
+		int vRange = MAX_SPEECH_RATE - MIN_SPEECH_RATE;
+		double retVal = (sr - MIN_SPEECH_RATE) * 100.0 / vRange;
+
+		return (int)retVal;
+	}
+
+	protected int getSpeechRateFromSeekBar(int sbValue){
+		int vRange = MAX_SPEECH_RATE - MIN_SPEECH_RATE;
+		double retVal = vRange * sbValue / 100.0 + MIN_SPEECH_RATE;
+
+		return (int)retVal;
+	}
+
+    protected void speechRateSettings(){
+		SpeechRateDialogFragment srdf = new SpeechRateDialogFragment();
+
+		srdf.show(getSupportFragmentManager(), "Speech Rate");
+	}
+
     protected void aboutDialog(){
     	String message = 
     			String.format("<h3>Author:%s</h3><br>version:%s<br>sendic version:%s<br>morph version:%s<br>"
@@ -379,5 +455,46 @@ public class MainActivity extends Activity {
 
         builder.show();
     }
+
+	public class SpeechRateDialogFragment extends DialogFragment {
+		public Dialog onCreateDialog(Bundle savedInstanceState){
+			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity()).setTitle("話速");
+			LayoutInflater inflater = getActivity().getLayoutInflater();
+			final View view = inflater.inflate(R.layout.dialog_speechrate,null);
+
+			builder.setView(view)
+					.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+						public void onClick(DialogInterface dialog, int id){
+							//
+						}
+					});
+
+
+			SeekBar sb = (SeekBar)view.findViewById(R.id.seekbar_speechrate);
+			sb.setProgress(speechRateToSeekBarProgress(speechRate));
+			TextView tv = (TextView)view.findViewById(R.id.text_speechrate);
+			tv.setText(String.format("%3d[モーラ/分]", speechRate));
+
+			sb.setOnSeekBarChangeListener(new OnSeekBarChangeListener(){
+				public void onStopTrackingTouch(SeekBar seekBar){
+				}
+				public void onStartTrackingTouch(SeekBar seekBar){
+
+				}
+				public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+					speechRate = getSpeechRateFromSeekBar(progress);
+					TextView tv = (TextView)view.findViewById(R.id.text_speechrate);
+					tv.setText(String.format("%3d[モーラ/分]", speechRate));
+					/*
+					int pv = speechRateToSeekBarProgress(speechRate);
+					Log.d("d","progress:"+progress);
+					Log.d("d","speechRate:"+speechRate);
+					Log.d("d","pv:"+pv);
+					*/
+				}
+			});
+			return builder.create();
+		}
+	}
 }
 

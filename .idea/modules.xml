@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EJAdvisor3App.iml" filepath="$PROJECT_DIR$/EJAdvisor3App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hanasu/Hanasu.iml" filepath="$PROJECT_DIR$/Hanasu/Hanasu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sasakama/Sasakama.iml" filepath="$PROJECT_DIR$/Sasakama/Sasakama.iml" />
       <module fileurl="file://$PROJECT_DIR$/eJAdvisor3/eJAdvisor3.iml" filepath="$PROJECT_DIR$/eJAdvisor3/eJAdvisor3.iml" />
       <module fileurl="file://$PROJECT_DIR$/eJAdvisor3App/eJAdvisor3App.iml" filepath="$PROJECT_DIR$/eJAdvisor3App/eJAdvisor3App.iml" />
       <module fileurl="file://$PROJECT_DIR$/jPLevelAnalyzer/jPLevelAnalyzer.iml" filepath="$PROJECT_DIR$/jPLevelAnalyzer/jPLevelAnalyzer.iml" />
@@ -11,4 +13,3 @@
     </modules>
   </component>
 </project>
-

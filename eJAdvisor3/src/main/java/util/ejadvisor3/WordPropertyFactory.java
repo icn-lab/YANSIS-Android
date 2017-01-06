@@ -18,6 +18,7 @@ import util.jplevelanalyzer.WordWithGrade;
 public class WordPropertyFactory {
     private final StringTagger tagger;
     private final VocabAnalyzer va;
+    private Token[] toks;
 
     public WordPropertyFactory(EJConfig conf) throws IOException {
         String path = conf.sen_conf;
@@ -27,7 +28,7 @@ public class WordPropertyFactory {
 
     }
     public WordProperty[] analyzeText(String text) throws IOException {
-        Token toks[] = tagger.analyze(text);
+        toks = tagger.analyze(text);
         WordWithGrade[] res = va.analyze(toks);
         WordProperty ret_val[] = new WordProperty[res.length];
         for (int i = 0; i < res.length; i++) {
@@ -35,5 +36,8 @@ public class WordPropertyFactory {
         }
         return ret_val;
     }
-    
+
+    public Token[] getToken(){
+        return toks;
+    }
 }

@@ -10,7 +10,7 @@ package util.ejadvisor3;
 import java.io.IOException;
 import java.util.ArrayList;
 import android.util.Log;
-
+import net.java.sen.Token;
 /**
  *
  * @author Akinori
@@ -23,6 +23,17 @@ public class EJAdvisor3 {
     private static String base;
     private ExampleFinder examples;
     private ScoreEstimator scoreEstimator;
+    private Token[] toks;
+    private static final String[] REPLACE
+            = {"～", "〜",
+            "\\.", "．",
+            "%", "％",
+            "\\+", "＋",
+            "\\*", "＊",
+            "-", "−",
+            "/", "／",
+            "=", "＝"
+    };
 
     public EJAdvisor3(String baseDir){
     	base = baseDir+"/";
@@ -105,6 +116,7 @@ public class EJAdvisor3 {
         	Log.d("doAnalysis", "text:"+t);
         	
             w = analyzer.analyzeText(t);
+            toks = analyzer.getToken();
             currentSent = splitSentence(w);    
         }catch (IOException e) {
         	Log.e("EJAdvisor3", "IO error on doAnalysis:"+e.toString());
@@ -136,5 +148,33 @@ public class EJAdvisor3 {
         EJExample[] res = examples.grepNJ(w.getBasicString());
 
         return res;
+    }
+
+    public String hankakuToZenkaku(String text) {
+        StringBuilder sb = new StringBuilder(text);
+        for (int i = 0; i < sb.length(); i++) {
+            char c = sb.charAt(i);
+            if ('0' <= c && c <= '9') {
+                sb.setCharAt(i, (char) (c - '0' + '０'));
+            } else if ('A' <= c && c <= 'Z') {
+                sb.setCharAt(i, (char) (c - 'A' + 'Ａ'));
+            } else if ('a' <= c && c <= 'z') {
+                sb.setCharAt(i, (char) (c - 'a' + 'ａ'));
+            }
+        }
+
+        return sb.toString();
+    }
+
+    public String replace(String text) {
+        for (int i = 0; i < REPLACE.length; i += 2) {
+            text = text.replaceAll(REPLACE[i], REPLACE[i + 1]);
+        }
+
+        return text;
+    }
+
+    public Token[] getTokens() {
+        return toks;
     }
 }

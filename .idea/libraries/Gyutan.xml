@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gyutan">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Hanasu/libs/Gyutan.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
