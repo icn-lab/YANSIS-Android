@@ -128,7 +128,7 @@ public class EJAdvisor3 {
 
     public double estimateScore(WordProperty[] w){
         double score = scoreEstimator.estimateScore(w);
-        System.out.println(""+score);
+        //System.out.println(""+score);
         score = score * 100.0 / 2.0;
         if(score > 100.0)
             score = 100.0;

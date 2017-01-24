@@ -182,7 +182,7 @@ public class MainActivity extends FragmentActivity {
             Log.d("ResourceManager", versionText+" exist:"+existVersion);
         	String zipVersion   = resourcemanager.version(versionText, zipFile);
         	Log.d("ResourceManager", versionText+" zip:"+zipVersion);
-        	if(zipVersion.compareTo(existVersion) < 0){
+        	if(zipVersion.compareTo(existVersion) > 0){
         		resourcemanager.extract(zipFile);
         	}
         }

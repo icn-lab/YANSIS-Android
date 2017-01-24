@@ -61,7 +61,7 @@ public class Hanasu {
                 cnt++;
             }
 
-            gyutan.set_audio_buff_size(48000*60*3);
+            gyutan.set_audio_buff_size(8000);
             gyutan.set_speed(ratio);
             gyutan.synthesis(null, null);
         }
@@ -129,10 +129,10 @@ public class Hanasu {
 
     public void setTokens(Token[] toks) {
         feature = gyutan.tokenToString(toks);
-
+        /*
          for(int i=0;i < feature.length;i++){
          Log.d("d", String.format("%d:%s\n", i, feature[i]));
          }
-
+        */
     }
 }

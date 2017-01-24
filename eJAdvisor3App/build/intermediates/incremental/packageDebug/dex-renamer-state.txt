@@ -1,4 +1,4 @@
-#Tue Jan 24 09:54:00 JST 2017
+#Tue Jan 24 17:11:27 JST 2017
 base.0=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

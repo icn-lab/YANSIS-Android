@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
+    abi="armeabi-v7a,armeabi"
     api-level="19"
-    density="xhdpi"
+    density="tvdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="8034927274327"
+    timestamp="17314760021664"
     token="-875795237540257036"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="2338" />
+        duration="1167" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="4882" />
+        duration="2542" />
     <task
         name="verifier"
-        duration="1138" />
+        duration="663" />
 
     <artifact
         location="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\outputs\apk\eJAdvisor3App-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="8034927274327"
+        timestamp="17314760021664"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\outputs\apk\eJAdvisor3App-debug.apk"

@@ -24,11 +24,12 @@ public class WordPropertyFactory {
         String path = conf.sen_conf;
         tagger = StringTagger.getInstance(path);
         //tagger = StringTagger.getInstance();
-	va = new VocabAnalyzer(conf.grade);
-
+	    va = new VocabAnalyzer(conf.grade);
     }
+
     public WordProperty[] analyzeText(String text) throws IOException {
         toks = tagger.analyze(text);
+
         WordWithGrade[] res = va.analyze(toks);
         WordProperty ret_val[] = new WordProperty[res.length];
         for (int i = 0; i < res.length; i++) {

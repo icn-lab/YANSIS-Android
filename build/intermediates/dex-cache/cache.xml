@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="21.1.2"
-        sha1="065d6410bb29bdea772ee6ff93ec2cc25cfaabae">
+        sha1="7fe5ccc18da9bf47913e70dde1f38af7e9023205">
         <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\instant-run-bootstrap_47d478e22b2a7646e7ebdcedf37016574b07a22c.jar" />
     </item>
     <item
@@ -27,15 +27,6 @@
         revision="21.1.2"
         sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
         <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_25fc512e7d6cf608398fdd14267c141f4f10fdd5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\exploded-aar\EJAdvisor3App\Hanasu\unspecified\jars\libs\Gyutan.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="21.1.2"
-        sha1="a81fd798ebdb1b62148ed06b317fa2b7d343c40d">
-        <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\Gyutan_e48a6b5896bca1b96458a7661baaa1d6a922e873.jar" />
     </item>
     <item
         is-multidex="false"
@@ -52,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="21.1.2"
-        sha1="de0877a6cd59d023eecc939508babefe23eb3677">
+        sha1="960881a9a027cc70a6e3f6c869c4e110a40d40af">
         <dex dex="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\pre-dexed\debug\instant-run_4cac450bceaa5d4afcc5baa2d9858889c068fd41.jar" />
     </item>
     <item

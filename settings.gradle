@@ -1,4 +1,4 @@
-include ':sen', ':Hanasu', ':Sasakama'
+include ':sen', ':Hanasu', ':Sasakama', ':Gyutan'
 include ':jPLevelAnalyzer'
 include ':eJAdvisor3'
 include ':resourceManager'

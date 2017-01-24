@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Gyutan">
+  <library name="Gyutan.Gyutan">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Hanasu/libs/Gyutan.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Gyutan/Gyutan.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

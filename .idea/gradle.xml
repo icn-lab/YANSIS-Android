@@ -10,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Gyutan" />
             <option value="$PROJECT_DIR$/Hanasu" />
             <option value="$PROJECT_DIR$/Sasakama" />
             <option value="$PROJECT_DIR$/eJAdvisor3" />
