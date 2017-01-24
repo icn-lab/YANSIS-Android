@@ -222,8 +222,37 @@ public class MainActivity extends FragmentActivity {
 
 	//合成ボタンを押したときの動作
 	protected void btnSyntheis_onClick(View view){
-		hanasu.setTokens(ejadv3.getTokens());
-		hanasu.doSynthesize(speechRate);
+		handler = new Handler(){
+			@Override
+			public void handleMessage(Message msg){
+				switch(msg.what){
+					case 1:
+						break;
+					case 0:
+						progressDialog.dismiss();
+						break;
+				}
+			}
+		};
+		progressDialog = new ProgressDialog(this);
+		progressDialog.setTitle("音声合成");
+		progressDialog.setMessage("処理しています");
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		progressDialog.setCancelable(false);
+		progressDialog.show();
+
+		// このスレッドが終了した時に，ダイアログが消える
+		thread = new Thread(new Runnable(){
+			public void run(){
+				hanasu.setTokens(ejadv3.getTokens());
+				hanasu.doSynthesize(speechRate);
+				handler.sendEmptyMessage(0);
+			}
+		});
+
+		thread.start();
+
+
 	}
 
     // 分析結果を表示する（文ごと）

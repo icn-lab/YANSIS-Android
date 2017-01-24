@@ -1,7 +1,4 @@
-#Fri Jan 06 16:45:38 JST 2017
-base.0=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_47d478e22b2a7646e7ebdcedf37016574b07a22c
-renamed.1=classes2.dex
+#Tue Jan 24 09:54:00 JST 2017
+base.0=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.1=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4cac450bceaa5d4afcc5baa2d9858889c068fd41\\classes.dex
-base.1=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4cac450bceaa5d4afcc5baa2d9858889c068fd41
-file.0=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_47d478e22b2a7646e7ebdcedf37016574b07a22c\\classes.dex
+file.0=C\:\\Users\\nagano\\AndroidStudioProjects\\EJAdvisor3App\\eJAdvisor3App\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

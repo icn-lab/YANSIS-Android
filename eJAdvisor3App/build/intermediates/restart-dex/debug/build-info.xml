@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="x86"
-    api-level="21"
-    density="xxhdpi"
+    api-level="19"
+    density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="16364197672990"
+    timestamp="8034927274327"
     token="-875795237540257036"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="46" />
+        duration="2338" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="32" />
+        duration="4882" />
     <task
         name="verifier"
-        duration="15" />
+        duration="1138" />
 
     <artifact
-        location="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
-        type="DEX" />
+        location="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\outputs\apk\eJAdvisor3App-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="15427466976202"
+        timestamp="8034927274327"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\outputs\apk\eJAdvisor3App-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="16364197672990"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\nagano\AndroidStudioProjects\EJAdvisor3App\eJAdvisor3App\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>
