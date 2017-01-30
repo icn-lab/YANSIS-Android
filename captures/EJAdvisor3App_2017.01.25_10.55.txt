@@ -1,0 +1,79 @@
+Applications Memory Usage (kB):
+Uptime: 707305 Realtime: 707289
+
+Total PSS by process:
+    36053 kB: com.google.android.apps.plus (pid 1235)
+    30777 kB: system (pid 195)
+    22585 kB: com.google.process.gapps (pid 422)
+    22391 kB: android.process.acore (pid 1265)
+    21702 kB: com.android.launcher (pid 400)
+    20430 kB: com.google.android.gms (pid 850)
+    18659 kB: com.google.android.gms.persistent (pid 511)
+    16188 kB: com.google.android.music:main (pid 1147)
+    14823 kB: com.android.systemui (pid 282)
+    12034 kB: com.android.vending (pid 1373)
+     9344 kB: com.google.android.gms.wearable (pid 682)
+     8872 kB: com.android.browser (pid 1118)
+     7778 kB: com.estrongs.android.pop (pid 1090)
+     7598 kB: com.google.android.gm (pid 979)
+     7334 kB: com.android.chrome (pid 1288)
+     7053 kB: android.process.media (pid 340)
+     6582 kB: com.android.phone (pid 376)
+     6105 kB: com.google.android.gallery3d (pid 1214)
+     5671 kB: com.atok.mobile.im.rt01.service (pid 358)
+     5642 kB: com.google.android.talk (pid 777)
+     5578 kB: com.google.android.calendar (pid 835)
+     4762 kB: com.android.settings (pid 476)
+     4380 kB: com.android.providers.calendar (pid 617)
+     3814 kB: com.google.android.googlequicksearchbox (pid 1411)
+     3306 kB: com.nvidia.NvCPLSvc (pid 730)
+
+Total PSS by OOM adjustment:
+    30777 kB: System
+               30777 kB: system (pid 195)
+    21405 kB: Persistent
+               14823 kB: com.android.systemui (pid 282)
+                6582 kB: com.android.phone (pid 376)
+    21702 kB: Foreground
+               21702 kB: com.android.launcher (pid 400)
+     5671 kB: Perceptible
+                5671 kB: com.atok.mobile.im.rt01.service (pid 358)
+    39089 kB: A Services
+               20430 kB: com.google.android.gms (pid 850)
+               18659 kB: com.google.android.gms.persistent (pid 511)
+    15121 kB: B Services
+                7053 kB: android.process.media (pid 340)
+                4762 kB: com.android.settings (pid 476)
+                3306 kB: com.nvidia.NvCPLSvc (pid 730)
+   175696 kB: Background
+               36053 kB: com.google.android.apps.plus (pid 1235)
+               22585 kB: com.google.process.gapps (pid 422)
+               22391 kB: android.process.acore (pid 1265)
+               16188 kB: com.google.android.music:main (pid 1147)
+               12034 kB: com.android.vending (pid 1373)
+                9344 kB: com.google.android.gms.wearable (pid 682)
+                8872 kB: com.android.browser (pid 1118)
+                7778 kB: com.estrongs.android.pop (pid 1090)
+                7598 kB: com.google.android.gm (pid 979)
+                7334 kB: com.android.chrome (pid 1288)
+                6105 kB: com.google.android.gallery3d (pid 1214)
+                5642 kB: com.google.android.talk (pid 777)
+                5578 kB: com.google.android.calendar (pid 835)
+                4380 kB: com.android.providers.calendar (pid 617)
+                3814 kB: com.google.android.googlequicksearchbox (pid 1411)
+
+Total PSS by category:
+   127681 kB: Dalvik
+    45184 kB: Native
+    39036 kB: .dex mmap
+    30037 kB: Unknown
+    26267 kB: .so mmap
+    22390 kB: .apk mmap
+    16699 kB: Other mmap
+     1112 kB: Other dev
+      544 kB: Cursor
+      455 kB: .ttf mmap
+       42 kB: Ashmem
+       14 kB: .jar mmap
+
+Total PSS: 309461 kB

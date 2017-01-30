@@ -61,7 +61,7 @@ public class Hanasu {
                 cnt++;
             }
 
-            gyutan.set_audio_buff_size(8000);
+            gyutan.set_audio_buff_size(48000*60*3);
             gyutan.set_speed(ratio);
             gyutan.synthesis(null, null);
         }

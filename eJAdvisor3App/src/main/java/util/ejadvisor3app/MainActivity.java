@@ -296,8 +296,13 @@ public class MainActivity extends FragmentActivity {
             if (i > 0 && w[i].is_content_word()) {
                 //自立語の場合
                 //「する」に対して、直前が名詞-サ変接続の場合には自立語でない
-                if (!w[i].getBasicString().equals("する") ||
-                        !w[i - 1].getPOS().equals("名詞-サ変接続")) {
+                if (w[i].getBasicString().equals("する") &&
+                        w[i - 1].getPOS().equals("名詞-サ変接続")) {
+				}
+				else if(w[i].getPOS().equals("名詞-数") &&
+						w[i - 1].getPOS().equals("名詞-数")) {
+				}
+				else{
                     bunsetsu.add(tmpStr);
                     tmpStr = "";
                 }
